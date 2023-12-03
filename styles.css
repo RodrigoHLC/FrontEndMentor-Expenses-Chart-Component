@@ -1,0 +1,155 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: DM sans, sans-serif;
+    font-size:18px;
+}
+.small, .dayName {
+    font-size:14px;
+    color:hsl(28, 10%, 53%);
+}
+/* ----- LANDMARKS ----- */
+html {
+    background-color: hsl(27, 66%, 92%);
+    /* height:100vh; */
+    width:100vw;
+}
+body {padding:0 1REM;margin:0;}
+main {
+    width:100%;
+    min-height:100vh;
+    margin:0;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+}
+/* ----- WIDTHS ----- */
+/* ----- WIDTHS ----- */
+.top, .card {
+    width:100%;
+    min-width:260px;
+    max-width:540px;
+    border-radius:1rem;
+    padding:1rem 1.5rem;
+}
+h1, h2, h3, p {
+    /* border:1px solid lime; */
+    display:inline-block;
+    margin:0;
+}
+.card h2, .right .small:nth-of-type(2) {
+    text-align:right;
+    line-height:1em;
+}
+/* ----- TOP SECTION ----- */
+/* ----- TOP SECTION ----- */
+.top {
+    background-color: hsl(10, 79%, 65%);
+
+    display:flex;
+    justify-content: space-between;
+    color:white !important;
+}
+.left, .right {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:0.5rem;
+}
+.top > .left > .small {
+    color:white !important;
+}
+/* ----- CARD ----- */
+/* ----- CARD ----- */
+.card {
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    gap:1.5rem;
+}
+.card h2{
+    align-self:flex-start;
+    display:inline-block;
+}
+
+/* ----- CHART ----- */
+/* ----- CHART ----- */
+.chart {
+    display:flex;
+    justify-content:space-between;
+    align-items: flex-end;
+    gap:5px;
+    height:194px;
+}
+.day {
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    align-items:center;
+    gap:5px;
+    /* DATAZO PARA QUE LOS TOOLTIP NO ESTIREN EL CONTENEDOR ↓ */
+    min-width: 0;
+}
+.tooltip {min-width: 0;
+    background-color:hsl(25, 47%, 15%) !important;
+    border-radius:5px;
+    padding:7px 5px;
+    color:white;
+    font-size:14px;
+    font-weight:700;
+    opacity:0;
+    z-index:1;
+    order:-1;
+    transition:0.1s;
+}
+.tooltip:hover{
+    z-index:2;
+    cursor:pointer;
+    background-color:hsl(186, 34%, 60%);
+}
+.bar {
+    background-color:hsl(10, 79%, 65%);
+    height:1px;
+    max-height:130px;
+    width:80%;
+    border-radius:5px;
+    transition:height 1s;
+}
+
+.bar:hover {
+    background-color:hsl(10, 95%, 75%);
+    cursor:pointer;
+}
+.bar:hover ~* {
+    opacity:1 !important;
+}
+.bar.active, .tooltip.active {
+    background-color:hsl(186, 34%, 60%);
+    opacity:1;
+    }
+
+/* ----- BOTTOM -----  */
+/* ----- BOTTOM -----  */
+.bottom {
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding:1.5rem 0;
+
+    border-top: 2px solid hsl(27, 66%, 92%)
+}
+.bottom .left {
+    gap:0.2rem;
+}
+.bottom .right {
+    align-items:flex-end;
+    gap:0.2rem;
+}
+.right .small:first-child{
+    color:black;
+    font-weight:700;
+}
